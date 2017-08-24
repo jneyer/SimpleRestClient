@@ -110,7 +110,8 @@
 		D6948CAE1F4F1A9100144ECE /* SimpleRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C871F4F1A5100144ECE /* SimpleRestClient.swift */; };
 		D6948CAF1F4F1A9100144ECE /* TrainRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C881F4F1A5100144ECE /* TrainRoutes.swift */; };
 		D6948CB01F4F1A9100144ECE /* TransitRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C891F4F1A5100144ECE /* TransitRoutes.swift */; };
-		D6948CB41F4F42C700144ECE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948CB31F4F42C700144ECE /* Alerts.swift */; };
+		D6948CB41F4F42C700144ECE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948CB31F4F42C700144ECE /* Alert.swift */; };
+		D6948CB61F4F4B5F00144ECE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948CB51F4F4B5F00144ECE /* Alerts.swift */; };
 		DB87FF0D3B17ABB5452FDD4D70C9A84D /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2616FF45A4C6B773F8C8E1CACAA405D /* FromJSON.swift */; };
 		DCA18CA46CC4153824FBA415224A0A72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67F6B1F9400EB0AEE0209A554112696 /* UIKit.framework */; };
 		E087C46E60DEE92BCA14E25FAD60C460 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E24BF2EFE2EC1A66B86A32DDF5A786 /* race.swift */; };
@@ -305,7 +306,8 @@
 		D6948C871F4F1A5100144ECE /* SimpleRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleRestClient.swift; sourceTree = "<group>"; };
 		D6948C881F4F1A5100144ECE /* TrainRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainRoutes.swift; sourceTree = "<group>"; };
 		D6948C891F4F1A5100144ECE /* TransitRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitRoutes.swift; sourceTree = "<group>"; };
-		D6948CB31F4F42C700144ECE /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		D6948CB31F4F42C700144ECE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D6948CB51F4F4B5F00144ECE /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		D6D9042397444B8C5DE3BE745E98C2FF /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
 		D8160A2A291FE1A5AB46303B6F6D5EAD /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
 		D84F041DB4E38B9ACF0FAF0E771E926D /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
@@ -681,7 +683,8 @@
 			isa = PBXGroup;
 			children = (
 				D6948C7D1F4F1A5100144ECE /* AlertDetails.swift */,
-				D6948CB31F4F42C700144ECE /* Alerts.swift */,
+				D6948CB31F4F42C700144ECE /* Alert.swift */,
+				D6948CB51F4F4B5F00144ECE /* Alerts.swift */,
 				D6948C7F1F4F1A5100144ECE /* APIArticle.swift */,
 				D6948C801F4F1A5100144ECE /* ApiError.swift */,
 				D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */,
@@ -960,8 +963,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6948CAE1F4F1A9100144ECE /* SimpleRestClient.swift in Sources */,
+				D6948CB61F4F4B5F00144ECE /* Alerts.swift in Sources */,
 				07BC261F50670FCEBBD2FE772CA4E2DE /* SimpleRestClient-dummy.m in Sources */,
-				D6948CB41F4F42C700144ECE /* Alerts.swift in Sources */,
+				D6948CB41F4F42C700144ECE /* Alert.swift in Sources */,
 				D6948CAF1F4F1A9100144ECE /* TrainRoutes.swift in Sources */,
 				D6948CAD1F4F1A9100144ECE /* RealTimeArrivals.swift in Sources */,
 				D6948CA61F4F1A9100144ECE /* APIArticle.swift in Sources */,
