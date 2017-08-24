@@ -13,8 +13,9 @@ import ObjectMapper
 public class APIResponse<T : Mappable>: Mappable {
     var success: Bool = false
     var response: T?
-    var alerts: T?
+    var alerts: [T]?
     var error : APIError?
+    var results: Int?
     
     required public init?(map: Map) {
     }
@@ -24,5 +25,6 @@ public class APIResponse<T : Mappable>: Mappable {
         response <- map["response"]
         alerts <- map["alerts"]
         error <- map["error"]
+        results <- map["results"]
     }
 }
