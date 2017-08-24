@@ -13,7 +13,7 @@ import ObjectMapper
 public class RestResponse<T : Mappable>: Mappable {
     var success: Bool = false
     var response: T?
-    var alerts: [T]?
+    var alerts: T?
     var error : APIError?
     var results: Int?
     
