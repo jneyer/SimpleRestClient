@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class APIArticle : Mappable {
+public class APIArticle : Mappable {
     var title : String?
     var author : String?
     var date : NSDate?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class APIErrorResult : NSError {
+public class APIErrorResult : NSError {
     var apiError : APIError?
     
     init(errorFromAPI : APIError?){

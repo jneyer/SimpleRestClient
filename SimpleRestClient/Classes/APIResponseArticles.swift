@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class APIResponseArticles : Mappable {
+public class APIResponseArticles : Mappable {
     var total : Int = 0
     var articles =  [APIArticle]()
     

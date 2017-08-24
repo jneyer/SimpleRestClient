@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class APIError : Mappable
+public class APIError : Mappable
 {
     var errorName : String?
     var errorCode : String?
