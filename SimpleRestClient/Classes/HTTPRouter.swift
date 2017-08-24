@@ -9,17 +9,32 @@
 import Foundation
 
 public enum HTTPRouter {
-    private static let baseURLString = "http://example.com/mobileapi"
+    private static let baseURLString = "https://vnjb5kvq2b.execute-api.us-east-1.amazonaws.com/prod/"
     
-    case Articles
+    case Alerts
+    case AlertDetails
+    case Arrivals
+    case RealTimeArrivals
+    case TransitRoutes
+    case TrainRoutes
     
     case CheckSessionStatus
     
     public var URLString : String {
         let path : String = {
             switch self {
-            case .Articles:
-                return "feed/Articles"
+            case .Alerts:
+                return "alerts"
+            case .AlertDetails:
+                return "alert-details"
+            case .Arrivals:
+                return "arrivals"
+            case .RealTimeArrivals:
+                return "realtimearrivals"
+            case .TransitRoutes:
+                return "transitroutes"
+            case .TrainRoutes:
+                return "trainroutes"
             default:
                 return ""
             }
