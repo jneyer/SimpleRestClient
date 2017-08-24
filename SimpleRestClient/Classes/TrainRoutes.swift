@@ -11,12 +11,19 @@ import ObjectMapper
 
 public class TrainRoutes : Mappable {
     
+    var results: Int?
+    var route: Int?
+    var trains: [TrainRoute]?
     
     required public init?(map: Map) {
         
     }
-
-    public func mapping(map: Map) {
-    }
     
+    public func mapping(map: Map) {
+        
+        results <- map["results"]
+        route <- map["route"]
+        trains <- map["trains"]
+        
+    }
 }
