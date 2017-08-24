@@ -14,11 +14,11 @@ public class APIArticle : Mappable {
     var author : String?
     var date : NSDate?
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         title <- map["title"]
         author <- map["author"]
         date <- map["date"]

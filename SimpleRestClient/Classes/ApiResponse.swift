@@ -16,10 +16,10 @@ public class APIResponse<T : Mappable>: Mappable {
     var error : APIError?
     
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         success <- map["success"]
         response <- map["response"]
         error <- map["error"]
