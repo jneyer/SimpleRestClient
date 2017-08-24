@@ -8,12 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleRestClient'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A simple HTTP client to process JSON responses from REST.'
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'This is a simple HTTP client framework to support REST requests and processing JSON responses.'
 
   s.homepage         = 'https://github.com/jneyer/SimpleRestClient'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
