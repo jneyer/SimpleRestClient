@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SimpleRestClient_Tests' do
+  pod 'SimpleRestClient', :path => '../'
+  
+  
+end
