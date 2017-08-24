@@ -20,7 +20,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'jneyer' => 'jneyer@captechconsulting.com' }
   s.source           = { :git => 'https://github.com/jneyer/SimpleRestClient.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.2'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'SimpleRestClient/Classes/**/*'
   s.frameworks = 'Foundation'
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
 
-  s.source_files = 'MyFramework/Classes/*.{swift}'
+  s.source_files = 'SimpleRestClient/Classes/*.{swift}'
 
 
   # s.resource_bundles = {

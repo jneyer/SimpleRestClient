@@ -12,7 +12,10 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.3.2):
     - PromiseKit/CorePromise
-  - SimpleRestClient (0.1.0)
+  - SimpleRestClient (0.1.0):
+    - Alamofire
+    - ObjectMapper
+    - PromiseKit
 
 DEPENDENCIES:
   - Alamofire
@@ -28,7 +31,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   PromiseKit: 32430ae679605b17c15d6193679cae7bf60147f7
-  SimpleRestClient: c748ff95ca395fda180f414a85e762745accd63f
+  SimpleRestClient: 9d2a6d1c38e3ca0176590cdb0acc68c45846b437
 
 PODFILE CHECKSUM: c5f44848120a7de1a9730d6cfabee0bc7f36d87c
 

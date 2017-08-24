@@ -1,7 +1,7 @@
 {
   "name": "SimpleRestClient",
   "version": "0.1.0",
-  "summary": "A short description of SimpleRestClient.",
+  "summary": "A simple HTTP client to process JSON responses from REST.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/jneyer/SimpleRestClient",
   "license": {
@@ -18,5 +18,17 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "SimpleRestClient/Classes/**/*"
+  "source_files": "SimpleRestClient/Classes/*.{swift}",
+  "frameworks": "Foundation",
+  "dependencies": {
+    "PromiseKit": [
+
+    ],
+    "Alamofire": [
+
+    ],
+    "ObjectMapper": [
+
+    ]
+  }
 }
