@@ -13,6 +13,7 @@ import ObjectMapper
 public class APIResponse<T : Mappable>: Mappable {
     var success: Bool = false
     var response: T?
+    var alerts: Alerts?
     var error : APIError?
     
     
@@ -22,6 +23,7 @@ public class APIResponse<T : Mappable>: Mappable {
     public func mapping(map: Map) {
         success <- map["success"]
         response <- map["response"]
+        alerts <- map["alerts"]
         error <- map["error"]
     }
 }
