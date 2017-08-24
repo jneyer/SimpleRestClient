@@ -34,13 +34,21 @@ public class SimpleRestClient : NSObject {
         return SimpleRestClient(url: url, apiKey: apiKey);
     }
     
-    //MARK: Helper functions
+    //HTTP operations
+    public func get<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+        return self.httpOperation(method: .get, route: route, parameters : parameters);
+    }
+    
     public func post<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
         return self.httpOperation(method: .post, route: route, parameters: parameters)
     }
     
-    public func get<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpOperation(method: .get, route: route, parameters : parameters);
+    public func put<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+        return self.httpOperation(method: .put, route: route, parameters: parameters)
+    }
+    
+    public func delete<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+        return self.httpOperation(method: .delete, route: route, parameters: parameters)
     }
     
     private func httpOperation<T : Mappable>(method : HTTPMethod, route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
@@ -48,28 +56,40 @@ public class SimpleRestClient : NSObject {
         return Promise<T?> { (fulfill, reject) -> Void in
             
             func parsingError(erroString : String) -> NSError {
-                return NSError(domain: "com.oramind.error", code: -100, userInfo: nil)
+                return NSError(domain: "org.septa.error", code: -100, userInfo: nil)
             }
-                request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
-                if let data = response.data {
+            
+            request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
+                
+                if let data = response.data
+                {
                     print("\(String(data: data, encoding: String.Encoding.utf8))");
                 }
+                
                 print(response.result.value)   // result of response serialization
+                
                 if let error = response.result.error {
                     reject(error) //network error
-                }else {
-                    if let apiResponse = Mapper<APIResponse<T>>().map(JSONObject: response.result.value) {
-                        if apiResponse.success {
+                }
+                else {
+                    
+                    if let apiResponse = Mapper<APIResponse<T>>().map(JSONObject: response.result.value)
+                    {
+                        if apiResponse.success
+                        {
                             fulfill(apiResponse.response)
-                        }else{
+                        }
+                        else {
                             if let logicalerror = apiResponse.error {
                                 reject(APIErrorResult(errorFromAPI: logicalerror))
-                            }else{
+                            }
+                            else {
                                 reject(APIErrorResult(errorFromAPI: nil))
                             }
                         }
-                    }else{
-                        let err = NSError(domain: "com.oramind.error", code: -101, userInfo: nil)
+                    }
+                    else {
+                        let err = NSError(domain: "org.septa.error", code: -101, userInfo: nil)
                         reject(err)
                     }
                 }
