@@ -1,8 +1,8 @@
 {
   "name": "SimpleRestClient",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A simple HTTP client to process JSON responses from REST.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "This is a simple HTTP client framework to support REST requests and processing JSON responses.",
   "homepage": "https://github.com/jneyer/SimpleRestClient",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/jneyer/SimpleRestClient.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
