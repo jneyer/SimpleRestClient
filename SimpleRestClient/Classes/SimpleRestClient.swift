@@ -61,12 +61,12 @@ public class SimpleRestClient : NSObject {
             
             request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
                 
-                if let data = response.data
-                {
-                    print("\(String(data: data, encoding: String.Encoding.utf8))");
-                }
-                
-                print(response.result.value)   // result of response serialization
+//                if let data = response.data
+//                {
+//                    print("\(String(data: data, encoding: String.Encoding.utf8))");
+//                }
+//                
+//                print(response.result.value)   // result of response serialization
                 
                 if let error = response.result.error {
                     reject(error) //network error

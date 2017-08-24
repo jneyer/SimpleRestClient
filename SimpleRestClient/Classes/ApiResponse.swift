@@ -13,16 +13,13 @@ import ObjectMapper
 public class APIResponse<T : Mappable>: Mappable {
     var success: Bool = false
     var response: T?
-    var alerts: [Alerts]?
+    var alerts: T?
     var error : APIError?
-    var results: Int?
-    
     
     required public init?(map: Map) {
     }
     
     public func mapping(map: Map) {
-        results <- map["results"]
         success <- map["success"]
         response <- map["response"]
         alerts <- map["alerts"]
