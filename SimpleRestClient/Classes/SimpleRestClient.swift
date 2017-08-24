@@ -73,19 +73,20 @@ public class SimpleRestClient : NSObject {
                 }
                 else {
                     
-                    if let apiResponse = Mapper<RestResponse<T>>().map(JSONObject: response.result.value)
+                    if let apiResponse = Mapper<T>().map(JSONObject: response.result.value)
                     {
                         if response.result.isSuccess
                         {
-                            fulfill(apiResponse.response)
+                            fulfill(apiResponse)
                         }
                         else {
-                            if let logicalerror = apiResponse.error {
-                                reject(APIErrorResult(errorFromAPI: logicalerror))
-                            }
-                            else {
-                                reject(APIErrorResult(errorFromAPI: nil))
-                            }
+//                            if let logicalerror = apiResponse.error {
+//                                reject(APIErrorResult(errorFromAPI: logicalerror))
+//                            }
+//                            else {
+//                                reject(APIErrorResult(errorFromAPI: nil))
+//                            }
+                            reject(APIErrorResult(errorFromAPI: nil))
                         }
                     }
                     else {
