@@ -73,7 +73,7 @@ public class SimpleRestClient : NSObject {
                 }
                 else {
                     
-                    if let apiResponse = Mapper<APIResponse<T>>().map(JSONObject: response.result.value)
+                    if let apiResponse = Mapper<RestResponse<T>>().map(JSONObject: response.result.value)
                     {
                         if response.result.isSuccess
                         {

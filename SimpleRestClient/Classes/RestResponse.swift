@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-public class APIResponse<T : Mappable>: Mappable {
+public class RestResponse<T : Mappable>: Mappable {
     var success: Bool = false
     var response: T?
     var alerts: [T]?
