@@ -66,9 +66,9 @@ public class SimpleRestClient : NSObject {
 //                    print("\(String(data: data, encoding: String.Encoding.utf8))");
 //                }
 //                
-                
-                print(response.result.value)   // result of response serialization
-                
+//                
+//                print(response.result.value)   // result of response serialization
+//                
                 if let error = response.result.error {
                     reject(error) //network error
                 }
