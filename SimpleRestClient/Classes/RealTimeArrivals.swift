@@ -9,6 +9,13 @@
 import Foundation
 import ObjectMapper
 
-public class RealTimeArrivals {
+public class RealTimeArrivals : Mappable {
     
+    
+    required public init?(map: Map) {
+        
+    }
+    
+    public func mapping(map: Map) {
+    }
 }

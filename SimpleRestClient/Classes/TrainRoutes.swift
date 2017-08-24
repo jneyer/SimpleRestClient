@@ -9,6 +9,14 @@
 import Foundation
 import ObjectMapper
 
-public class TrainRoutes {
+public class TrainRoutes : Mappable {
+    
+    
+    required public init?(map: Map) {
+        
+    }
+
+    public func mapping(map: Map) {
+    }
     
 }

@@ -12,7 +12,6 @@ import ObjectMapper
 
 public class AlertDetails_Alert : Mappable {
 
-    var alert_id: String?
     var route_id: String?
     var route_name: String?
     var message: String?
@@ -26,7 +25,6 @@ public class AlertDetails_Alert : Mappable {
 
     public func mapping(map: Map) {
         
-        alert_id <- map["alert_id"]
         route_id <- map["route_id"]
         route_name <- map["route_name"]
         message <- map["message"]
