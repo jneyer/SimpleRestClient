@@ -1,0 +1,22 @@
+{
+  "name": "SimpleRestClient",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleRestClient.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jneyer/SimpleRestClient",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jneyer": "jneyer@captechconsulting.com"
+  },
+  "source": {
+    "git": "https://github.com/jneyer/SimpleRestClient.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SimpleRestClient/Classes/**/*"
+}

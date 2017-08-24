@@ -1,0 +1,6 @@
+framework module SimpleRestClient {
+  umbrella header "SimpleRestClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

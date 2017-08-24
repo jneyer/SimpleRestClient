@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.5.0)
+  - ObjectMapper (2.2.8)
+  - PromiseKit (4.3.2):
+    - PromiseKit/Foundation (= 4.3.2)
+    - PromiseKit/QuartzCore (= 4.3.2)
+    - PromiseKit/UIKit (= 4.3.2)
+  - PromiseKit/CorePromise (4.3.2)
+  - PromiseKit/Foundation (4.3.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.3.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.3.2):
+    - PromiseKit/CorePromise
+  - SimpleRestClient (0.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
+  - PromiseKit
+  - SimpleRestClient (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleRestClient:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
+  PromiseKit: 32430ae679605b17c15d6193679cae7bf60147f7
+  SimpleRestClient: c748ff95ca395fda180f414a85e762745accd63f
+
+PODFILE CHECKSUM: c5f44848120a7de1a9730d6cfabee0bc7f36d87c
+
+COCOAPODS: 1.3.1
