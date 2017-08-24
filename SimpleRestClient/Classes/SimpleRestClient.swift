@@ -14,16 +14,24 @@ import ObjectMapper
 
 public class SimpleRestClient : NSObject {
     
-    private var apiKey : String;
     private var url : String;
+    private var apiKey : String?;
+    private var headers : HTTPHeaders?;
     
-    private init(apiKey: String, url: String) {
-        self.apiKey = apiKey;
+    private init(url: String, apiKey: String?) {
         self.url = url;
+
+        if (apiKey != nil) {
+            self.apiKey = apiKey;
+            headers = [
+                "x-api-key": apiKey!,
+                "Accept": "application/json"
+            ]
+        }
     }
     
-    public static func defaultClient(apiKey: String, url: String) -> SimpleRestClient {
-        return SimpleRestClient(apiKey: apiKey, url: url);
+    public static func defaultClient(url: String, apiKey: String?) -> SimpleRestClient {
+        return SimpleRestClient(url: url, apiKey: apiKey);
     }
     
     //MARK: Helper functions
@@ -42,8 +50,7 @@ public class SimpleRestClient : NSObject {
             func parsingError(erroString : String) -> NSError {
                 return NSError(domain: "com.oramind.error", code: -100, userInfo: nil)
             }
-            
-            request(route.URLString, method: method, parameters: parameters).responseJSON { (response) -> Void in
+                request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
                 if let data = response.data {
                     print("\(String(data: data, encoding: String.Encoding.utf8))");
                 }
