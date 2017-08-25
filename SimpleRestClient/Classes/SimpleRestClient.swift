@@ -36,22 +36,22 @@ public class SimpleRestClient : NSObject {
     
     //HTTP operations
     public func get<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpOperation(method: .get, route: route, parameters : parameters);
+        return self.httpRequest(method: .get, route: route, parameters : parameters);
     }
     
     public func post<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpOperation(method: .post, route: route, parameters: parameters)
+        return self.httpRequest(method: .post, route: route, parameters: parameters)
     }
     
     public func put<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpOperation(method: .put, route: route, parameters: parameters)
+        return self.httpRequest(method: .put, route: route, parameters: parameters)
     }
     
     public func delete<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpOperation(method: .delete, route: route, parameters: parameters)
+        return self.httpRequest(method: .delete, route: route, parameters: parameters)
     }
     
-    private func httpOperation<T : Mappable>(method : HTTPMethod, route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+    private func httpRequest<T : Mappable>(method : HTTPMethod, route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
         
         return Promise<T?> { (fulfill, reject) -> Void in
             
@@ -76,7 +76,9 @@ public class SimpleRestClient : NSObject {
                     
                     if let apiResponse = Mapper<T>().map(JSONObject: response.result.value)
                     {
-                        if response.result.isSuccess
+                        let status = apiResponse as? RestResponse
+                        
+                        if (status != nil && status!.success)
                         {
                             fulfill(apiResponse)
                         }

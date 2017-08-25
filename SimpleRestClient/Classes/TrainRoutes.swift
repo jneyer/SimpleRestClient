@@ -9,18 +9,17 @@
 import Foundation
 import ObjectMapper
 
-public class TrainRoutes : Mappable {
+public class TrainRoutes : RestResponse {
     
     var results: Int?
     var route: Int?
     var trains: [TrainRoute]?
     
-    required public init?(map: Map) {
+    public override func mapping(map: Map) {
         
-    }
-    
-    public func mapping(map: Map) {
-        
+        if (map["trains"].isKeyPresent) {
+            success = true;
+        }
         results <- map["results"]
         route <- map["route"]
         trains <- map["trains"]

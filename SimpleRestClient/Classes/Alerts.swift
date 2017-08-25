@@ -9,14 +9,17 @@
 import Foundation
 import ObjectMapper
 
-public class Alerts : Mappable {
+public class Alerts : RestResponse {
+    
     var alerts: [Alert]?
     var results: Int?
     
-    required public init?(map: Map) {
-    }
-    
-    public func mapping(map: Map) {
+    public override func mapping(map: Map) {
+        
+        super.mapping(map: map)
+        if (map["alerts"].isKeyPresent) {
+            success = true;
+        }
         alerts <- map["alerts"]
         results <- map["results"]
     }

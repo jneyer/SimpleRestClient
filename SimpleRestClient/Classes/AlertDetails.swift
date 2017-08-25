@@ -9,15 +9,15 @@
 import Foundation
 import ObjectMapper
 
-public class AlertDetails : Mappable {
+public class AlertDetails : RestResponse {
     
     var alert: AlertDetails_Alert?
     
-    required public init?(map: Map) {
-    }
-
-    public func mapping(map: Map) {
+    public override func mapping(map: Map) {
         
+        if (map["alert"].isKeyPresent) {
+            success = true;
+        }
         alert <- map["alert"]
         
     }

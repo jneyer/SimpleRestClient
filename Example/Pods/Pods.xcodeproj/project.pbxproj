@@ -690,27 +690,35 @@
 		D6948C7B1F4F1A5100144ECE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D6948CC31F4F6C9200144ECE /* Models */,
+				D6948C801F4F1A5100144ECE /* ApiError.swift */,
+				D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */,
+				D6948C851F4F1A5100144ECE /* HTTPRouter.swift */,
+				D6948C871F4F1A5100144ECE /* SimpleRestClient.swift */,
+			);
+			name = Classes;
+			path = SimpleRestClient/Classes;
+			sourceTree = "<group>";
+		};
+		D6948CC31F4F6C9200144ECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D6948C821F4F1A5100144ECE /* RestResponse.swift */,
 				D6948C7D1F4F1A5100144ECE /* AlertDetails.swift */,
 				D6948CB71F4F4D2D00144ECE /* AlertDetails_Alert.swift */,
 				D6948CB91F4F4D4700144ECE /* Detour.swift */,
 				D6948CB31F4F42C700144ECE /* Alert.swift */,
 				D6948CB51F4F4B5F00144ECE /* Alerts.swift */,
-				D6948C801F4F1A5100144ECE /* ApiError.swift */,
-				D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */,
-				D6948C821F4F1A5100144ECE /* RestResponse.swift */,
 				D6948C841F4F1A5100144ECE /* Arrivals.swift */,
 				D6948CBB1F4F62F500144ECE /* Arrival.swift */,
-				D6948C851F4F1A5100144ECE /* HTTPRouter.swift */,
 				D6948C861F4F1A5100144ECE /* RealTimeArrivals.swift */,
 				D6948CBD1F4F66B300144ECE /* RealTimeArrival.swift */,
-				D6948C871F4F1A5100144ECE /* SimpleRestClient.swift */,
 				D6948C881F4F1A5100144ECE /* TrainRoutes.swift */,
 				D6948CC11F4F6AF000144ECE /* TrainRoute.swift */,
 				D6948C891F4F1A5100144ECE /* TransitRoutes.swift */,
 				D6948CBF1F4F69B400144ECE /* TransitRoute.swift */,
 			);
-			name = Classes;
-			path = SimpleRestClient/Classes;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

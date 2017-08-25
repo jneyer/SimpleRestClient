@@ -9,21 +9,22 @@
 import Foundation
 import ObjectMapper
 
-public class Arrivals : Mappable {
+public class Arrivals : RestResponse {
     
     var origin : String?
     var destination : String?
     var results : Int?
     var arrivals : [Arrival]?
     
-    required public init?(map: Map) {
+    public override func mapping(map: Map) {
         
-    }
-    
-    public func mapping(map: Map) {
+        if (map["arrivals"].isKeyPresent) {
+            success = true;
+        }
         origin <- map["origin"]
         destination <- map["destination"]
         results <- map["results"]
         arrivals <- map["arrivals"]
+        
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class RealTimeArrivals : Mappable {
+public class RealTimeArrivals : RestResponse {
     
     var origin: String?
     var destination: String?
@@ -18,13 +18,11 @@ public class RealTimeArrivals : Mappable {
     var results: Int?
     var arrivals: [RealTimeArrival]?
     
-    
-    required public init?(map: Map) {
+    public override func mapping(map: Map) {
         
-    }
-    
-    public func mapping(map: Map) {
-        
+        if (map["arrivals"].isKeyPresent) {
+            success = true;
+        }
         origin <- map["origin"]
         destination <- map["destination"]
         type <- map["type"]
