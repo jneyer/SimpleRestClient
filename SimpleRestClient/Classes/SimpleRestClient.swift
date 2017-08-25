@@ -12,7 +12,7 @@ import Alamofire
 import ObjectMapper
 
 
-public class SimpleRestClient : NSObject {
+class SimpleRestClient : NSObject {
     
     private var url : String;
     private var apiKey : String?;
@@ -58,12 +58,12 @@ public class SimpleRestClient : NSObject {
         return Promise<T?> { (fulfill, reject) -> Void in
             
             func parsingError(erroString : String) -> NSError {
-                return NSError(domain: "org.septa.error", code: -100, userInfo: nil)
+                return NSError(domain: "org.septa.SimpleRestClient", code: -100, userInfo: nil)
             }
             
             request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
                 
-                debugPrint(response.result.value ?? "Warning: empty response")   // result of response serialization
+                // debugPrint(response.result.value ?? "Warning: empty response")   // dump the response
 
                 if let error = response.result.error {
                     reject(error) //network error
@@ -88,7 +88,7 @@ public class SimpleRestClient : NSObject {
                         }
                     }
                     else {
-                        let err = NSError(domain: "org.septa.error", code: -101, userInfo: nil)
+                        let err = NSError(domain: "org.septa.SimpleRestClient", code: -101, userInfo: nil)
                         reject(err)
                     }
                 }
