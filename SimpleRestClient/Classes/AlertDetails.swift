@@ -11,7 +11,9 @@ import ObjectMapper
 
 public class AlertDetails : RestResponse {
     
-    var alert: AlertDetails_Alert?
+    var route: String?
+    var alerts: [AlertDetails_Alert]?
+    var results: Int?
     
     public override func mapping(map: Map) {
         
@@ -20,8 +22,10 @@ public class AlertDetails : RestResponse {
         if (map["alert"].isKeyPresent) {
             success = true;
         }
-        alert <- map["alert"]
         
+        route <- map["route"]
+        alerts <- map["alert"]
+        results <- map["results"]
     }
 
 }
