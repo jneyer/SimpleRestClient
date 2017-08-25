@@ -13,7 +13,7 @@ import ObjectMapper
 public class RestResponse: Mappable {
     
     var success: Bool = false
-    var error : APIError?
+    var error : Error?
     
     required public init?(map: Map) {
     }

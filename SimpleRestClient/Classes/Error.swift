@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class APIError : Mappable
+public class Error : Mappable
 {
     var errorName : String?
     var errorCode : String?
@@ -19,7 +19,7 @@ public class APIError : Mappable
     }
     
     public func mapping(map : Map){
-        errorName <- map["errorMessage"]
+        errorName <- map["message"]
         errorCode <- map["errorCode"]
     }
 }

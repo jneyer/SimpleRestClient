@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class APIErrorResult : NSError {
-    var apiError : APIError?
+public class ErrorResult : NSError {
+    var error : Error?
     
-    init(errorFromAPI : APIError?){
+    init(errorFromAPI : Error?){
         
         let userInfo : [String : AnyObject] = {
             if let err = errorFromAPI{
@@ -22,11 +22,11 @@ public class APIErrorResult : NSError {
         }()
         
         super.init(domain: "org.septa", code: -101, userInfo: userInfo)
-        self.apiError = errorFromAPI
+        self.error = errorFromAPI
     }
     
     func errorMessage() -> String {
-        guard let apierr = self.apiError, let errName = apierr.errorName else { return "Generic error" }
+        guard let apierr = self.error, let errName = apierr.errorName else { return "Generic error" }
         return errName;
     }
     

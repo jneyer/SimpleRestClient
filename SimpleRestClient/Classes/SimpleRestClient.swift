@@ -78,10 +78,10 @@ public class SimpleRestClient : NSObject {
                         }
                         else {
                             if let logicalerror = status?.error {
-                                reject(APIErrorResult(errorFromAPI: logicalerror))
+                                reject(ErrorResult(errorFromAPI: logicalerror))
                             }
                             else {
-                                reject(APIErrorResult(errorFromAPI: nil))
+                                reject(ErrorResult(errorFromAPI: nil))
                             }
                         }
                     }

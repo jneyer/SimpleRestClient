@@ -99,8 +99,8 @@
 		CE5149137E8EDB0EAB4D8597CFA2BDF5 /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35584E9E4694785DEBA9ED7EA6965AA5 /* URLDataPromise.swift */; };
 		D4B5582EAEBDE199C78303F07AD5547F /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9788CF58A4EC96E8CDA98A7FACC5FB /* NSNotificationCenter+AnyPromise.m */; };
 		D6948CA41F4F1A9100144ECE /* AlertDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C7D1F4F1A5100144ECE /* AlertDetails.swift */; };
-		D6948CA71F4F1A9100144ECE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C801F4F1A5100144ECE /* ApiError.swift */; };
-		D6948CA81F4F1A9100144ECE /* ApiErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */; };
+		D6948CA71F4F1A9100144ECE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C801F4F1A5100144ECE /* Error.swift */; };
+		D6948CA81F4F1A9100144ECE /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C811F4F1A5100144ECE /* ErrorResult.swift */; };
 		D6948CA91F4F1A9100144ECE /* RestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C821F4F1A5100144ECE /* RestResponse.swift */; };
 		D6948CAB1F4F1A9100144ECE /* Arrivals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C841F4F1A5100144ECE /* Arrivals.swift */; };
 		D6948CAC1F4F1A9100144ECE /* HTTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948C851F4F1A5100144ECE /* HTTPRouter.swift */; };
@@ -299,8 +299,8 @@
 		CF921286A8EDBBE516D3502BA7071258 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		D67F6B1F9400EB0AEE0209A554112696 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D6948C7D1F4F1A5100144ECE /* AlertDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetails.swift; sourceTree = "<group>"; };
-		D6948C801F4F1A5100144ECE /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorResult.swift; sourceTree = "<group>"; };
+		D6948C801F4F1A5100144ECE /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D6948C811F4F1A5100144ECE /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		D6948C821F4F1A5100144ECE /* RestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestResponse.swift; sourceTree = "<group>"; };
 		D6948C841F4F1A5100144ECE /* Arrivals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrivals.swift; sourceTree = "<group>"; };
 		D6948C851F4F1A5100144ECE /* HTTPRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRouter.swift; sourceTree = "<group>"; };
@@ -691,8 +691,8 @@
 			isa = PBXGroup;
 			children = (
 				D6948CC31F4F6C9200144ECE /* Models */,
-				D6948C801F4F1A5100144ECE /* ApiError.swift */,
-				D6948C811F4F1A5100144ECE /* ApiErrorResult.swift */,
+				D6948C801F4F1A5100144ECE /* Error.swift */,
+				D6948C811F4F1A5100144ECE /* ErrorResult.swift */,
 				D6948C851F4F1A5100144ECE /* HTTPRouter.swift */,
 				D6948C871F4F1A5100144ECE /* SimpleRestClient.swift */,
 			);
@@ -991,7 +991,7 @@
 				D6948CAD1F4F1A9100144ECE /* RealTimeArrivals.swift in Sources */,
 				D6948CB81F4F4D2D00144ECE /* AlertDetails_Alert.swift in Sources */,
 				D6948CAC1F4F1A9100144ECE /* HTTPRouter.swift in Sources */,
-				D6948CA81F4F1A9100144ECE /* ApiErrorResult.swift in Sources */,
+				D6948CA81F4F1A9100144ECE /* ErrorResult.swift in Sources */,
 				D6948CBE1F4F66B300144ECE /* RealTimeArrival.swift in Sources */,
 				D6948CBC1F4F62F500144ECE /* Arrival.swift in Sources */,
 				D6948CBA1F4F4D4700144ECE /* Detour.swift in Sources */,
@@ -999,7 +999,7 @@
 				D6948CC01F4F69B400144ECE /* TransitRoute.swift in Sources */,
 				D6948CA91F4F1A9100144ECE /* RestResponse.swift in Sources */,
 				D6948CB01F4F1A9100144ECE /* TransitRoutes.swift in Sources */,
-				D6948CA71F4F1A9100144ECE /* ApiError.swift in Sources */,
+				D6948CA71F4F1A9100144ECE /* Error.swift in Sources */,
 				D6948CA41F4F1A9100144ECE /* AlertDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
