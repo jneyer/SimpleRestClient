@@ -9,7 +9,8 @@
 import Foundation
 
 public enum HTTPRouter {
-    private static let baseURLString = "https://vnjb5kvq2b.execute-api.us-east-1.amazonaws.com/prod/"
+    
+    static var baseURLString = ""
     
     case Alerts
     case AlertDetails
@@ -39,6 +40,11 @@ public enum HTTPRouter {
                 return ""
             }
         }()
+        
+        if (HTTPRouter.baseURLString.characters.last != "/") {
+            HTTPRouter.baseURLString = HTTPRouter.baseURLString + "/"
+        }
+        
         return HTTPRouter.baseURLString + path;
     }
 }

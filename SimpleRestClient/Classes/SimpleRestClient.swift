@@ -19,8 +19,10 @@ public class SimpleRestClient : NSObject {
     private var headers : HTTPHeaders?;
     
     private init(url: String, apiKey: String?) {
+        
         self.url = url;
-
+        HTTPRouter.baseURLString = url
+        
         if (apiKey != nil) {
             self.apiKey = apiKey;
             headers = [
