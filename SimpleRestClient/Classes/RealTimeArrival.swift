@@ -19,20 +19,20 @@ public class RealTimeArrival : Mappable {
     var connection_station_name: String?
     var orig_line_trip_id: String?
     var term_line_trip_id: String?
-    var sched_departure_time: String?
-    var sched_arrival_time: String?
-    var orig_delay_minutes: String?
-    var term_delay_minutes: String?
-    var orig_tiploc_name: String?
-    var term_tiploc_name: String?
+    var orig_arrival_time: String?
+    var orig_departure_time: String?
+    var term_arrival_time: String?
+    var term_departure_time: String?
+    var orig_delay_minutes: Int?
+    var term_delay_minutes: Int?
     var orig_last_stop_id: String?
     var orig_last_stop_name: String?
     var term_last_stop_id: String?
     var term_last_stop_name: String?
     var orig_line_direction: String?
     var term_line_direction: String?
-    var latitude: String?
-    var longitude: String?
+    var vehicle_lat: String?
+    var vehicle_lon: String?
 
     
     
@@ -50,20 +50,20 @@ public class RealTimeArrival : Mappable {
         connection_station_name <- map["connection_station_name"]
         orig_line_trip_id <- map["orig_line_trip_id"]
         term_line_trip_id <- map["term_line_trip_id"]
-        sched_departure_time <- map["sched_departure_time"]
-        sched_arrival_time <- map["sched_arrival_time"]
+        orig_arrival_time <- map["orig_arrival_time"]
+        orig_departure_time <- map["orig_departure_time"]
+        term_arrival_time <- map["term_arrival_time"]
+        term_departure_time <- map["term_departure_time"]
         orig_delay_minutes <- map["orig_delay_minutes"]
         term_delay_minutes <- map["term_delay_minutes"]
-        orig_tiploc_name <- map["orig_tiploc_name"]
-        term_tiploc_name <- map["term_tiploc_name"]
         orig_last_stop_id <- map["orig_last_stop_id"]
         orig_last_stop_name <- map["orig_last_stop_name"]
         term_last_stop_id <- map["term_last_stop_id"]
         term_last_stop_name <- map["term_last_stop_name"]
         orig_line_direction <- map["orig_line_direction"]
         term_line_direction <- map["term_line_direction"]
-        latitude <- map["latitude"]
-        longitude <- map["longitude"]
+        vehicle_lat <- map["vehicle_lat"]
+        vehicle_lon <- map["vehicle_lon"]
         
     }
 }
