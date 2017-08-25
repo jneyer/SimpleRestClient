@@ -19,12 +19,12 @@ public class AlertDetails : RestResponse {
         
         super.mapping(map: map)
         
-        if (map["alert"].isKeyPresent) {
+        if (map["alerts"].isKeyPresent) {
             success = true;
         }
         
         route <- map["route"]
-        alerts <- map["alert"]
+        alerts <- map["alerts"]
         results <- map["results"]
     }
 
