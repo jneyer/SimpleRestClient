@@ -20,7 +20,7 @@ public class RestResponse: Mappable {
     
     public func mapping(map: Map) {
         
-        error <- map["error"]
+        error <- map["message"]
         
     }
 }
