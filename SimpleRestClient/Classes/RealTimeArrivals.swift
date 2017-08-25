@@ -11,8 +11,8 @@ import ObjectMapper
 
 public class RealTimeArrivals : RestResponse {
     
-    var origin: String?
-    var destination: String?
+    var origin: Int?
+    var destination: Int?
     var type: String?
     var route: String?
     var results: Int?
@@ -28,7 +28,9 @@ public class RealTimeArrivals : RestResponse {
         origin <- map["origin"]
         destination <- map["destination"]
         type <- map["type"]
-        route <- map["route"]
+        if (map["route"].isKeyPresent) {
+           route <- map["route"]
+        }
         results <- map["results"]
         arrivals <- map["arrivals"]
 
