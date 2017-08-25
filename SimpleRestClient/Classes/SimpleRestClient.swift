@@ -89,7 +89,6 @@ public class SimpleRestClient : NSObject {
                             else {
                                 reject(APIErrorResult(errorFromAPI: nil))
                             }
-                            reject(APIErrorResult(errorFromAPI: nil))
                         }
                     }
                     else {
