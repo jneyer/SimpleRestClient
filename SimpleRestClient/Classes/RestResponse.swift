@@ -19,8 +19,9 @@ public class RestResponse: Mappable {
     }
     
     public func mapping(map: Map) {
-        
-        error <- map["message"]
+        if (map["message"] != nil) {
+            error <- map
+        }
         
     }
 }
