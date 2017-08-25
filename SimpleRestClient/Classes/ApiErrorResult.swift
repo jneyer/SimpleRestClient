@@ -21,7 +21,7 @@ public class APIErrorResult : NSError {
             }
         }()
         
-        super.init(domain: "com.oramind.error", code: -101, userInfo: userInfo)
+        super.init(domain: "org.septa", code: -101, userInfo: userInfo)
         self.apiError = errorFromAPI
     }
     

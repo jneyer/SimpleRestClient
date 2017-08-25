@@ -83,12 +83,12 @@ public class SimpleRestClient : NSObject {
                             fulfill(apiResponse)
                         }
                         else {
-//                            if let logicalerror = apiResponse.error {
-//                                reject(APIErrorResult(errorFromAPI: logicalerror))
-//                            }
-//                            else {
-//                                reject(APIErrorResult(errorFromAPI: nil))
-//                            }
+                            if let logicalerror = status?.error {
+                                reject(APIErrorResult(errorFromAPI: logicalerror))
+                            }
+                            else {
+                                reject(APIErrorResult(errorFromAPI: nil))
+                            }
                             reject(APIErrorResult(errorFromAPI: nil))
                         }
                     }
