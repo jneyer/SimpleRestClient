@@ -21,7 +21,7 @@ public class ErrorResult : NSError {
             }
         }()
         
-        super.init(domain: "org.septa", code: -101, userInfo: userInfo)
+        super.init(domain: "org.septa.ErrorResult", code: -101, userInfo: userInfo)
         self.error = errorFromAPI
     }
     
