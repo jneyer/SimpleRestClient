@@ -9,8 +9,17 @@
 import Foundation
 import PromiseKit
 
-public class SEPTAApiClient : SimpleRestClient {
+public class SEPTAApiClient : NSObject {
     
+    var httpClient : SimpleRestClient?;
+    
+    private init(url: String, apiKey: String?) {
+        httpClient = SimpleRestClient.defaultClient(url: url, apiKey: apiKey)
+    }
+    
+    public static func defaultClient(url: String, apiKey: String?) -> SEPTAApiClient {
+        return SEPTAApiClient(url: url, apiKey: apiKey);
+    }
     
     public func getAlerts (route: String?) -> Promise<Alerts?> {
         
@@ -19,7 +28,7 @@ public class SEPTAApiClient : SimpleRestClient {
             param = ["route": route!]
         }
         
-        return self.get(route: .Alerts, parameters: param! as [String : AnyObject])
+        return httpClient!.get(route: .Alerts, parameters: param! as [String : AnyObject])
         
     }
     
@@ -27,7 +36,7 @@ public class SEPTAApiClient : SimpleRestClient {
         
         let param = ["route-name": routeName] as [String : AnyObject]
         
-        return self.get(route: .AlertDetails, parameters: param )
+        return httpClient!.get(route: .AlertDetails, parameters: param )
         
     }
     
@@ -35,14 +44,14 @@ public class SEPTAApiClient : SimpleRestClient {
         
         let param = ["origin": origin, "destination" : destination] as [String : AnyObject]
         
-        return self.get(route: .Arrivals, parameters: param)
+        return httpClient!.get(route: .Arrivals, parameters: param)
     }
     
     public func getRealTimeArrivals (originId: String, destinationId: String, transitType: TransitType, route: String?) -> Promise<RealTimeArrivals?> {
         
         let param = ["origin": originId, "destination" : destinationId, "type": transitType.value, "route": route] as [String : AnyObject]
         
-        return self.get(route: .RealTimeArrivals, parameters: param)
+        return httpClient!.get(route: .RealTimeArrivals, parameters: param)
         
     }
     
@@ -50,7 +59,7 @@ public class SEPTAApiClient : SimpleRestClient {
         
         let param = ["route": route] as [String : AnyObject]
         
-        return self.get(route: .TransitRoutes, parameters: param)
+        return httpClient!.get(route: .TransitRoutes, parameters: param)
         
     }
     
@@ -59,7 +68,7 @@ public class SEPTAApiClient : SimpleRestClient {
         
         let param = ["route": route] as [String : AnyObject]
         
-        return self.get(route: .TrainRoutes, parameters: param)
+        return httpClient!.get(route: .TrainRoutes, parameters: param)
         
     }
     
