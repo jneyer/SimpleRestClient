@@ -17,6 +17,7 @@ public class Alerts : RestResponse {
     public override func mapping(map: Map) {
         
         super.mapping(map: map)
+        
         if (map["alerts"].isKeyPresent) {
             success = true;
         }

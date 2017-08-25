@@ -17,6 +17,8 @@ public class TransitRoutes : RestResponse {
     
     public override func mapping(map: Map) {
         
+        super.mapping(map: map)
+        
         if (map["buses"].isKeyPresent) {
             success = true;
         }

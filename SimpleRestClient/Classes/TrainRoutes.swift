@@ -17,6 +17,8 @@ public class TrainRoutes : RestResponse {
     
     public override func mapping(map: Map) {
         
+        super.mapping(map: map)
+        
         if (map["trains"].isKeyPresent) {
             success = true;
         }

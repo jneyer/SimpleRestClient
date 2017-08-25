@@ -20,6 +20,8 @@ public class RealTimeArrivals : RestResponse {
     
     public override func mapping(map: Map) {
         
+        super.mapping(map: map)
+        
         if (map["arrivals"].isKeyPresent) {
             success = true;
         }
