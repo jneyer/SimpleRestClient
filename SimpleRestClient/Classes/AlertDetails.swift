@@ -12,6 +12,7 @@ import ObjectMapper
 public class AlertDetails : RestResponse {
     
     var route: String?
+    var routeName: String?
     var alerts: [AlertDetails_Alert]?
     var results: Int?
     
@@ -24,6 +25,7 @@ public class AlertDetails : RestResponse {
         }
         
         route <- map["route"]
+        routeName <- map["route_name"]
         alerts <- map["alerts"]
         results <- map["results"]
     }
