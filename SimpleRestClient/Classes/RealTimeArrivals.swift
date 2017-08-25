@@ -28,7 +28,7 @@ public class RealTimeArrivals : RestResponse {
         origin <- map["origin"]
         destination <- map["destination"]
         type <- map["type"]
-        if (map["route"].isKeyPresent) {
+        if (map["route"].isKeyPresent && (map["route"].currentValue as! String) != "null") {
            route <- map["route"]
         }
         results <- map["results"]
