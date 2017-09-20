@@ -13,7 +13,7 @@ public class TransitRoutes : RestResponse {
 
     var results: Int?
     var route: Int?
-    var buses: [TransitRoute]?
+    var transit: [TransitRoute]?
     
     public override func mapping(map: Map) {
         
@@ -24,7 +24,7 @@ public class TransitRoutes : RestResponse {
         }
         results <- map["results"]
         route <- map["route"]
-        buses <- map["buses"]
+        transit <- map["transit"]
         
     }
 
