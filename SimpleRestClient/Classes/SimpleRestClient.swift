@@ -64,7 +64,7 @@ class SimpleRestClient : NSObject {
             var route = route.URLString;
             
             if let pparams = pathParams {
-                route = route + pparams;
+                route = route + "/" + pparams;
             }
             
             request(route, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
