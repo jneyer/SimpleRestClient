@@ -57,18 +57,14 @@ public class SEPTAApiClient : NSObject {
     
     public func getTransitRoutes (route: String) -> Promise<TransitRoutes?> {
         
-        let param = ["route": route] as [String : AnyObject]
-        
-        return httpClient!.get(route: .TransitRoutes, parameters: param)
+        return httpClient!.get(route: .TransitRoutes + route, parameters: nil)
         
     }
     
     
     public func getTrainRoutes (route: String) -> Promise<TrainRoutes?> {
         
-        let param = ["route": route] as [String : AnyObject]
-        
-        return httpClient!.get(route: .TrainRoutes, parameters: param)
+        return httpClient!.get(route: .TrainRoutes, parameters: nil)
         
     }
     
