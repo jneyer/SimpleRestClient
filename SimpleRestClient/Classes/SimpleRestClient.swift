@@ -37,23 +37,23 @@ class SimpleRestClient : NSObject {
     }
     
     //HTTP operations
-    public func get<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
-        return self.httpRequest(method: .get, route: route, parameters : parameters);
+    public func get<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil, pathParams : String? = nil) -> Promise<T?> {
+        return self.httpRequest(method: .get, route: route, parameters : parameters, pathParams: pathParams);
     }
     
-    public func post<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+    public func post<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil, pathParams : String? = nil) -> Promise<T?> {
         return self.httpRequest(method: .post, route: route, parameters: parameters)
     }
     
-    public func put<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+    public func put<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil, pathParams : String? = nil) -> Promise<T?> {
         return self.httpRequest(method: .put, route: route, parameters: parameters)
     }
     
-    public func delete<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+    public func delete<T : Mappable>(route : HTTPRouter, parameters : [String : AnyObject]? = nil, pathParams : String? = nil) -> Promise<T?> {
         return self.httpRequest(method: .delete, route: route, parameters: parameters)
     }
     
-    private func httpRequest<T : Mappable>(method : HTTPMethod, route : HTTPRouter, parameters : [String : AnyObject]? = nil) -> Promise<T?> {
+    private func httpRequest<T : Mappable>(method : HTTPMethod, route : HTTPRouter, parameters : [String : AnyObject]? = nil, pathParams: String? = nil) -> Promise<T?> {
         
         return Promise<T?> { (fulfill, reject) -> Void in
             
@@ -61,7 +61,13 @@ class SimpleRestClient : NSObject {
                 return NSError(domain: "org.septa.SimpleRestClient", code: -100, userInfo: nil)
             }
             
-            request(route.URLString, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
+            var route = route.URLString;
+            
+            if let pparams = pathParams {
+                route = route + pparams;
+            }
+            
+            request(route, method: method, parameters: parameters, headers: headers).responseJSON { (response) -> Void in
                 
                 // debugPrint(response.result.value ?? "Warning: empty response")   // dump the response
 
