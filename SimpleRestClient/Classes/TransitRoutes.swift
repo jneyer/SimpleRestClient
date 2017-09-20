@@ -19,7 +19,7 @@ public class TransitRoutes : RestResponse {
         
         super.mapping(map: map)
         
-        if (map["buses"].isKeyPresent) {
+        if (map["transit"].isKeyPresent) {
             success = true;
         }
         results <- map["results"]
